@@ -1,13 +1,77 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pollyglot</title>
+    <link rel="stylesheet" href="./src/style.css" type="text/css" />
+    <script
+      src="./src/main.js"
+      type="module"
+      defer
+      type="text/javascript"
+    ></script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <!-- Your HTML here -->
+    <div class="banner">
+      <img src="./assets/parrot.png" alt="cartoon of a flying parrot" />
+      <div class="banner-heading-container">
+        <h1 class="banner-heading">PollyGlot</h1>
+        <h6 class="banner-subheading">Perfect translation everytime</h6>
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="translate-container">
+        <h4 class="heading">Text to translate 👇</h4>
+        <textarea
+          class="textarea"
+          placeholder="enter text to be translated"
+        ></textarea>
+        <h4 class="heading">Select language 👇</h4>
+        <div class="radios-container">
+          <div class="radio-container">
+            <input
+              type="radio"
+              checked
+              name="language"
+              id="french"
+              value="french"
+            />
+            <label for="french"
+              >French
+              <img src="./assets/fr-flag.png" alt="flag of France" class="flag"
+            /></label>
+          </div>
+          <div class="radio-container">
+            <input type="radio" name="language" id="spanish" value="spanish" />
+            <label for="spanish"
+              >Spanish
+              <img src="./assets/sp-flag.png" alt="flag of Spain" class="flag"
+            /></label>
+          </div>
+          <div class="radio-container">
+            <input
+              type="radio"
+              name="language"
+              id="japanese"
+              value="japanese"
+            />
+            <label for="japanese"
+              >Japanese
+              <img src="./assets/jpn-flag.png" alt="flag of Japan" class="flag"
+            /></label>
+          </div>
+        </div>
+        <p class="error-message hide"></p>
+        <input type="button" id="translate-btn" value="Translate" />
+      </div>
+      <div class="translated-container hide">
+        <h4 class="heading">Original text 👇</h4>
+        <p class="text" id="original-text"></p>
+        <h4 class="heading">Your translation 👇</h4>
+        <p class="text" id="translated-text"></p>
+        <input type="button" id="reset-btn" value="Start Over" />
+      </div>
+    </div>
   </body>
 </html>
